@@ -77,11 +77,11 @@ Correlation <- function(directory, threshold = 0)
     if (csum> threshold) 
     {
       
-      #Extract data of niteate and sulfate and calculate correlation between them
+      #Extract data of nitrate and sulfate and calculate correlation between them
       sul<- tmp[which(!is.na(tmp$sulfate)), ]
       nit <- sul[which(!is.na(sul$nitrate)), ]
       dat<- c(dat, cor(nit$sulfate, nit$nitrate))
     }
   }
-  Return(dat)
+  return(dat)
 }
