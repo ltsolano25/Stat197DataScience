@@ -18,12 +18,12 @@ best<- function(state, outcome){
   outcome1 <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
  
    if(!any(state == outcome1$State)){
-    stop()
+    stop(print("invalid state"))
      }
   
   else if((outcome %in% c("heart attack", "heart failure",
                           "pneumonia")) == FALSE) {
-    stop()
+    stop(print("invalid outcome"))
   }
  
    outcome2 <- subset(outcome1, State == state)
